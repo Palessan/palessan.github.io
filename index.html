@@ -1,5 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"> 
+<head>
+    <script src="wasm_exec.js"></script>
+    <script>
+        if (WebAssembly){
+            const go = new Go();
+            WebAssembly
+            .instantiateStreaming(fetch("main1.wasm"), go.importObject)
+            .then((result) => {
+                go.run(result.instance);
+            });
+    }
+    </script>
+    <title>Hello, World!</title>
+</head>
+</html>
+
 <!-- <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,19 +36,3 @@
     <h1>Hello, World!</h1>
     <p>This is a simple Hello, World! website.</p>
 </body> -->
-
-<head>
-    <script src="wasm_exec.js"></script>
-    <script>
-        if (WebAssembly){
-            const go = new Go();
-            WebAssembly
-            .instantiateStreaming(fetch("main.wasm"), go.importObject)
-            .then((result) => {
-                go.run(result.instance);
-            });
-    }
-    </script>
-    <title>Hello, World!</title>
-</head>
-</html>
