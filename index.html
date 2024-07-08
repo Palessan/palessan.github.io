@@ -6,7 +6,7 @@
         if (WebAssembly){
             const go = new Go();
             WebAssembly
-            .instantiateStreaming(fetch("main1.wasm"), go.importObject)
+            .instantiateStreaming(fetch("main.wasm"), go.importObject)
             .then((result) => {
                 go.run(result.instance);
             });
