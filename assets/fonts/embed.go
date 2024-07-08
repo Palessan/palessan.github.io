@@ -1,17 +1,3 @@
-// Copyright 2022 The Ebitengine Authors
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
 package fonts
 
 import (
@@ -19,9 +5,16 @@ import (
 )
 
 var (
-	// //go:embed mplus 1p regular.ttf // no spaces allowed
-	// MPlus1pRegular_ttf []byte
+	// no spaces allowed
+	//go:embed Comic_Sans_MS.ttf
+	Comic_Sans_MS []byte
 
-	// //go:embed press start 2p.ttf
-	// PressStart2P_ttf []byte
+	//go:embed Comic_Sans_MS_Bold.ttf
+	Comic_Sans_MS_Bold []byte
+
+	//go:embed press_start_2p.ttf
+	Press_start_2p []byte
+
+	//go:embed mplus_1p.ttf
+	Mplus_1p []byte
 )
