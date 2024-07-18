@@ -18,8 +18,8 @@ var (
 	//go:embed mines/torpedo_mine.wav
 	M_torpedo_mine []byte
 
-	//go:embed explosions/bomb.wav
-	E_bomb []byte
+	//go:embed explosions/1_bomb.wav
+	E_1_bomb []byte
 	//go:embed explosions/boom.wav
 	E_boom []byte
 	//go:embed explosions/grenade.wav
@@ -85,4 +85,9 @@ var (
 	V_yippee []byte
 	//go:embed victories/victory_fanfare.mp3
 	V_victory_fanfare []byte
+
+	//go:embed grunts/angry-grunt-103204.mp3
+	G_grunt1 []byte
+	//go:embed grunts/grunt-106134.mp3
+	G_grunt2 []byte
 )
