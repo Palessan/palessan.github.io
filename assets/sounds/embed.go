@@ -86,8 +86,13 @@ var (
 	//go:embed victories/victory_fanfare.mp3
 	V_victory_fanfare []byte
 
+	//go:embed grunts/turtle_mating.mp3
+	G_turtle_mating []byte
 	//go:embed grunts/angry-grunt-103204.mp3
 	G_grunt1 []byte
 	//go:embed grunts/grunt-106134.mp3
 	G_grunt2 []byte
+
+	//go:embed other/disconnected.mp3
+	O_disconnected []byte
 )
