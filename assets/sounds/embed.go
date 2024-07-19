@@ -93,6 +93,8 @@ var (
 	//go:embed grunts/grunt-106134.mp3
 	G_grunt2 []byte
 
+	//go:embed other/connected.mp3
+	O_connected []byte
 	//go:embed other/disconnected.mp3
 	O_disconnected []byte
 )
