@@ -166,6 +166,6 @@ var (
 	V_tdft2 []byte
 	//go:embed victories/gay.mp3
 	V_gay []byte
-	//go:embed victories/meme.mp3
-	V_meme []byte
+	// //go:embed victories/meme.mp3
+	// V_meme []byte
 )
