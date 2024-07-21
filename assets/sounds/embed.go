@@ -1,14 +1,14 @@
-package fonts
+package sounds
 
 import (
 	_ "embed"
 )
 
 var (
-	//go:embed bulletBounces\bounce.wav
+	//go:embed bounces/bounce.wav
 	B_bounce []byte
 
-	//go:embed bulletBounces/silencer.wav
+	//go:embed bounces/silencer.wav
 	B_silencer []byte
 
 	//go:embed mines/flyin_off.wav
@@ -158,7 +158,7 @@ var (
 	V_drdisrespect_getthisidiotkidoutofhere []byte
 	//go:embed victories/drdisrespect_neverplaythisshitgameagain.mp3
 	V_drdisrespect_neverplaythisshitgameagain []byte
-	//go:embed victories/Keanu_Breathtaking.mp3 
+	//go:embed victories/Keanu_Breathtaking.mp3
 	V_Keanu_Breathtaking []byte
 	//go:embed victories/noob.mp3
 	V_noob []byte
