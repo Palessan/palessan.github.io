@@ -16,7 +16,7 @@
     <style>
         /* Set the background color of the entire page to grey */
         body {
-            background-color: grey;
+            background-color: rgb(51, 51, 51);
             margin: 0;
             padding: 0;
             display: flex;
@@ -24,7 +24,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            color: white;
+            color: rgb(0, 116, 10);
         }
 
         /* Ensure the GIF scales properly and centers on the page */
@@ -36,7 +36,24 @@
 </head>
 <body>
     <h1>It takes around 20s to load the first time</h1>
-    <img src="assets/images/other/loading.gif" alt="Loading">
+    <img id="randomGif" alt="Random GIF">
+    <script>
+        // List of GIF URLs
+        const gifs = [
+            "assets/images/other/loading.gif",
+            "assets/images/other/loading2.gif"
+        ];   
+
+
+        // Function to choose a random GIF
+        function getRandomGif() {
+            const randomIndex = Math.floor(Math.random() * gifs.length);
+            return gifs[randomIndex];
+        }
+
+        // Set the src attribute of the img element to a random GIF URL
+        document.getElementById("randomGif").src = getRandomGif();
+    </script>
 </body>
 </html>
 
