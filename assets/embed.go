@@ -4,7 +4,7 @@ import (
 	"embed"
 )
 
-// file system cannot work with wasmserve
-
+// wasmserve compatible
+//
 //go:embed *
 var Assets embed.FS
