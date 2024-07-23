@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <html lang="en"> 
 <head>
-    <!-- <script type="text/javascript">
+    <script src="wasm_exec.js"></script>
+    <script>
+        if (WebAssembly){
+            const go = new Go();
+            WebAssembly
+            .instantiateStreaming(fetch("main.wasm"), go.importObject)
+            .then((result) => {
+                go.run(result.instance);
+            });
+    }
+    </script>
+    <script type="text/javascript">
         let audioContext;
 
         function initializeAudioContext() {
@@ -16,7 +27,7 @@
                 audioContext.resume();
             }
         });
-    </script> -->
+    </script>
     <title>The Panic Game!</title>
     <style>
         /* Set the background color of the entire page to grey */
@@ -39,21 +50,11 @@
         }
     </style>
 </head>
-<body>
-    <script src="wasm_exec.js"></script>
-    <script>
-        if (WebAssembly){
-            const go = new Go();
-            WebAssembly
-            .instantiateStreaming(fetch("main.wasm"), go.importObject)
-            .then((result) => {
-                go.run(result.instance);
-            });
-    }
-    </script>
+ <!-- <img src="assets/images/other/loading.gif" alt="Loading"> -->
+
+<!-- <body>
     <h1>It takes around 23 seconds to load the first time</h1>
-    <p>Please note that Safari not supported</p>
-        <!-- <img src="assets/images/other/loading.gif" alt="Loading"> -->
+    <p>Please note that Safari is not supported</p>
     <img id="randomGif" alt="Random GIF">
     <script>
         // List of GIF URLs
@@ -72,7 +73,7 @@
         // Set the src attribute of the img element to a random GIF URL
         document.getElementById("randomGif").src = getRandomGif();
     </script>
-</body>
+</body> -->
 </html>
 
 <!-- <head>
