@@ -2,7 +2,7 @@
 <html lang="en"> 
 <head>
     <script src="wasm_exec.js"></script>
-    <script>
+    <!-- <script>
         if (WebAssembly){
             const go = new Go();
             WebAssembly
@@ -11,22 +11,20 @@
                 go.run(result.instance);
             });
     }
-    </script>
-    <script type="text/javascript">
-        let audioContext;
-
-        function initializeAudioContext() {
-            if (!audioContext) {
-                audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            }
+    </script> -->
+    <script>
+        if (WebAssembly) {
+            const go = new Go();
+            WebAssembly
+                .instantiateStreaming(fetch("main.wasm"), go.importObject)
+                .then((result) => {
+                    go.run(result.instance);
+                    // Hide the messages once WebAssembly starts
+                    document.getElementById('loading-message').style.display = 'none';
+                    document.getElementById('safari-warning').style.display = 'none';
+                    document.getElementById('randomGif').style.display = 'none';
+                });
         }
-
-        document.addEventListener('click', function() {
-            initializeAudioContext();
-            if (audioContext.state === 'suspended') {
-                audioContext.resume();
-            }
-        });
     </script>
     <title>The Panic Game!</title>
     <style>
@@ -52,9 +50,13 @@
 </head>
  <!-- <img src="assets/images/other/loading.gif" alt="Loading"> -->
 
-<!-- <body>
-    <h1>It takes around 23 seconds to load the first time</h1>
-    <p>Please note that Safari is not supported</p>
+<body>
+    <!-- <h1>It takes around 23 seconds to load the first time</h1>
+    <p>Please note that Safari is not supported</p> -->
+    <h1 id="loading-message">It takes around 23 seconds to load the first time</h1>
+    <p id="safari-warning">Please note that Safari is not supported</p>
+</body>
+</html>
     <img id="randomGif" alt="Random GIF">
     <script>
         // List of GIF URLs
@@ -73,8 +75,7 @@
         // Set the src attribute of the img element to a random GIF URL
         document.getElementById("randomGif").src = getRandomGif();
     </script>
-</body> -->
-</html>
+
 
 <!-- <head>
     <meta charset="UTF-8">
@@ -127,3 +128,20 @@
     <h1>Ebiten WASM Example</h1>
 </body>
 </html> -->
+
+<!-- <script type="text/javascript">
+    let audioContext;
+
+    function initializeAudioContext() {
+        if (!audioContext) {
+            audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        }
+    }
+
+    document.addEventListener('click', function() {
+        initializeAudioContext();
+        if (audioContext.state === 'suspended') {
+            audioContext.resume();
+        }
+    });
+</script> -->
