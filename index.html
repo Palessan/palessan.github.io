@@ -3,14 +3,14 @@
 <head>
     <script src="wasm_exec.js"></script>
     <script>
-        if (WebAssembly){
+        // if (WebAssembly){
             const go = new Go();
             WebAssembly
             .instantiateStreaming(fetch("main.wasm"), go.importObject)
             .then((result) => {
                 go.run(result.instance);
             });
-    }
+    // }
     </script>
     <title>The Panic Game!</title>
     <!-- <style>
@@ -34,9 +34,9 @@
         }
     </style> -->
 </head>
-<body>
+<!-- <body>
     <h1>It takes around 23 seconds to load the first time</h1>
-    <p>Please note that Safari not supported</p>
+    <p>Please note that Safari not supported</p> -->
     <!-- <img src="assets/images/other/loading.gif" alt="Loading"> -->
     <!-- <img id="randomGif" alt="Random GIF">
     <script>
@@ -56,7 +56,7 @@
         // Set the src attribute of the img element to a random GIF URL
         document.getElementById("randomGif").src = getRandomGif();
     </script> -->
-</body>
+<!-- </body> -->
 </html>
 
 <!-- <head>
