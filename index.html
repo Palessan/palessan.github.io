@@ -8,7 +8,12 @@
             WebAssembly
                 .instantiateStreaming(fetch("main.wasm"), go.importObject)
                 .then((result) => {
-                    go.run(result.instance);
+                    go.run(result.instance).then(() => {
+                        // This runs when the WASM execution completes
+                        document.body.style.backgroundColor = 'black';
+                        document.body.innerHTML = 'Game exited. Please refresh with F5 to restart';
+                    });
+
                     // Hide the messages once WebAssembly starts
                     document.getElementById('loading-message').style.display = 'none';
                     document.getElementById('safari-warning').style.display = 'none';
