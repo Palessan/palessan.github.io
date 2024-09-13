@@ -61,26 +61,28 @@
     <p id="menu">Menu: KB = Space/Esc, GP = Middle/Touchpad</p>
     <p id="game-restart"> Game restart KB = 1, GP = Start</p>
     <p id="change-mode">Changing mode: KB = 2, GP = Back</p>
-
 </body>
+
 </html>
-    <img id="randomGif" alt="Random GIF">
-    <script>
-        // List of GIF URLs
-        const gifs = [
-            "assets/images/other/loading.gif",
-            "assets/images/other/loading2.gif"
-        ];   
+
+<img id="randomGif" alt="Random GIF">
+
+<script>
+    // List of GIF URLs
+    const gifs = [
+        "assets/images/other/loading.gif",
+        "assets/images/other/loading2.gif"
+    ];   
 
 
-        // Function to choose a random GIF
-        function getRandomGif() {
-            const randomIndex = Math.floor(Math.random() * gifs.length);
-            return gifs[randomIndex];
-        }
+    // Function to choose a random GIF
+    function getRandomGif() {
+        const randomIndex = Math.floor(Math.random() * gifs.length);
+        return gifs[randomIndex];
+    }
 
-        // Set the src attribute of the img element to a random GIF URL
-        document.getElementById("randomGif").src = getRandomGif();
-    </script>
+    // Set the src attribute of the img element to a random GIF URL
+    document.getElementById("randomGif").src = getRandomGif();
+</script>
 
 
