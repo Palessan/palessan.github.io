@@ -3,6 +3,13 @@
 <head>
     <script src="wasm_exec.js"></script>
     <script>
+
+        // Check if the page has been loaded before in this session
+        if (!sessionStorage.getItem("wasmLoaded")) {
+            sessionStorage.setItem("wasmLoaded", "true");
+            location.reload(); // Refresh the page automatically after the first load
+        }
+
         if (WebAssembly) {
             const go = new Go();
             WebAssembly
@@ -19,6 +26,12 @@
                     document.getElementById('safari-warning').style.display = 'none';
                     document.getElementById('randomGif').style.display = 'none';
                 });
+
+                // Check if this is the first time running the WASM in this session, so that the sounds are loaded correctly.
+                if (!sessionStorage.getItem("wasmFirstRun")) {
+                    sessionStorage.setItem("wasmFirstRun", "true");
+                    location.reload(); // Refresh the page automatically after the first run
+                }
         }
     </script>
     <title>The Panic Game!</title>
