@@ -4,10 +4,6 @@
     <script src="wasm_exec.js"></script>
     <script>
 
-        console.log = function(msg) {
-            document.getElementById("wasm-output").textContent += msg + "\n";
-        };
-
         // Check if the page has been loaded before in this session
         if (!sessionStorage.getItem("wasmLoaded")) {
             sessionStorage.setItem("wasmLoaded", "true");
@@ -21,22 +17,8 @@
                 .then((result) => {
                     go.run(result.instance).then(() => {
                         // This runs when the WASM execution completes
-                        // document.body.style.backgroundColor = 'black';
-                        // document.body.innerHTML = 'Game exited. Please refresh with F5 to restart';
-                            document.body.style.backgroundColor = 'black';
-                            document.body.innerHTML = '';
-
-                            const message = document.createElement('div');
-                            message.innerText = 'Game exited. Please refresh with F5 to restart';
-                            message.style.color = 'white';
-
-                            const output = document.createElement('pre');
-                            output.id = 'wasm-output';
-                            output.style.color = 'white';
-                            output.innerText = 'Any WASM output will appear here (if captured).';
-
-                            document.body.appendChild(message);
-                            document.body.appendChild(output);
+                        document.body.style.backgroundColor = 'black';
+                        document.body.innerHTML = 'Game exited. Please refresh with F5 to restart';
                     });
 
                     // Hide the messages once WebAssembly starts
@@ -98,7 +80,6 @@
     <p id="game-restart">Game restart: Press 1 / Changing mode: Press 2 / Add keyboard player: Press 3 / Menu: Press Space or Escape</p>
     <p id="gamepads">You can plug in up to 4 gamepads</p>
 
-    <pre id="wasm-output" style="color: white;"></pre>
 </body>
 
 </html>
