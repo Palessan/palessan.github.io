@@ -4,6 +4,10 @@
     <script src="wasm_exec.js"></script>
     <script>
 
+        console.log = function(msg) {
+            document.getElementById("wasm-output").textContent += msg + "\n";
+        };
+
         // Check if the page has been loaded before in this session
         if (!sessionStorage.getItem("wasmLoaded")) {
             sessionStorage.setItem("wasmLoaded", "true");
