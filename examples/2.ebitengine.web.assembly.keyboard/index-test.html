@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebAssembly Example</title>
+</head>
+<body>
+    <script>
+        // Function to load and run the WebAssembly module
+        async function runWebAssembly() {
+            // Fetch the main.wasm file
+            const response = await fetch('main.wasm');
+            const bytes = await response.arrayBuffer();
+
+            // WebAssembly Instantiation
+            const obj = await WebAssembly.instantiate(bytes, {});
+
+            // Accessing exports from the WebAssembly module
+            const { add } = obj.instance.exports;
+            const result = add(4, 5);
+            console.log('Result of add(4, 5):', result);
+        }
+
+        // Run the WebAssembly function when the page is loaded
+        runWebAssembly();
+    </script>
+</body>
+</html>
