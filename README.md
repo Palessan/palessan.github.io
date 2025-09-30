@@ -1,9 +1,12 @@
 # palessan.github.io
 
+cd examples/ebitengine.web.assembly.keyboard
+
 To generate wasm:
 GOOS=js GOARCH=wasm go build -o main.wasm main.go
 
 To run wasm:
+
 wasmserve.exe .
 http://localhost:8080/
 
